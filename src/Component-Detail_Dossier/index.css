@@ -1,0 +1,429 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.comboST {
+  width: 124px;
+  height: 44px;
+  border-radius: 35px;
+  border-color: #16221f;
+  text-align: center;
+  box-shadow: inset;
+  font-size: 18px;
+  left: 15%;
+  margin-left: 10px;
+  margin-top: 100px;
+  outline: none;
+  cursor: pointer;
+  
+}
+
+#comboCategories {
+  left: 25%;
+  cursor: pointer
+}
+#ajouteCategorie {
+  margin-left: 501px;
+  cursor: pointer
+}
+#content{
+  float: right;
+  width: 87%;
+  
+  
+ 
+}
+
+
+.Header1 {
+  
+  background-color: #16221F;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.logo {
+  display: flex;
+  position: absolute;
+}
+
+.logo img {
+  width: 70px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+#logo-name {
+  color: white;
+  font-size: 50px;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+.User1{
+  position: absolute;
+  display: flex;
+  right: 1px;
+  align-items: flex-start;
+  height:100%;
+  width: 250px;
+}
+.User1 img {
+  position: relative;
+  width:60px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+#username12{}
+
+
+.User1 h2 {
+  position: relative;
+  color: white;
+  font-size:30px;
+  margin-left: 60%;
+  margin-top: 18px;
+}
+.User1 h3 {
+  position: relative;
+  color: white;
+  font-size: 20px;
+}
+#titleDT {
+  position: absolute;
+  width: auto;
+  height: auto;
+  margin-top: 83px;
+  left: 47%;
+  border-radius: 10px;
+  text-align: center;
+}
+#flexx{
+  margin-top:10px;
+  display: flex;
+}
+.side-bar {
+  
+  background-color: #16221F;
+  color: #000000;
+  width: 13%;
+  float: left;
+  position: fixed;
+ height: 100%;
+  text-align: center;
+
+ 
+}
+
+.side-bar #Dossier1 {
+  position: absolute;
+  align-items: center;
+  height: 37px;
+  width: 100%;
+  background-color: #0e1d19;
+  top:45%;
+  color: white;
+}
+
+.side-bar a {
+  position: relative;
+  font-size: 20px;
+  margin: auto;
+  text-decoration: none;
+  color: black;
+  top:5px;
+}
+
+.side-bar #Dossier:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: 0.8s;
+}
+#titleDT p {
+  width: auto;
+  font-size: 1.5vmax;
+  font-family: Hatton;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#Fichie {
+  width: 45px;
+  height: 40px;
+  margin-top: 100px;
+  box-shadow: 3px 2px 10px #000000;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: 100px;
+}
+#FV{
+position: absolute;
+display: flex;
+right: 6%;
+width:100px;
+}
+#cs{
+  float: left;
+  display: flex;
+}
+#logoFichie {
+
+  width: 30px;
+  margin-top: 5px;
+  cursor: pointer;
+
+}
+
+#vote {
+  
+  width: 45px;
+  height: auto;
+  margin-top: 100px;
+  box-shadow: 3px 2px 10px #000000;
+ position: absolute;
+ right: 30px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 20;
+}
+#logoVote {
+  width: 30px;
+  margin-top: 5px;
+  cursor: pointer
+}
+
+.postessimo {
+  position: absolute;
+  width: 70%;
+  height: 67%;
+  left: 21%;
+  margin-top:19px;
+  border-radius: 10px;
+  overflow-y: scroll;
+  border-style: outset;
+  
+
+}
+
+.creeNote {
+  background-color: #ffffff;
+  z-index: 100;
+  width: 100%;
+  height: 55px;
+  border-radius: 19px;
+  outline: none;
+  margin-right:10px ;
+  border: #ffffff;
+  box-shadow: 3px 2px 10px -2px #000000;
+  border: 1px solid lightblue;
+  padding: 10px 40px;
+  font-size: 17px;
+}
+#create{
+  position: absolute;
+  display: flex;
+  z-index: 3;
+ top: 92%;
+  margin-left: 10%;
+  width:70%;
+  
+}
+#afficheNote {
+  
+
+  width: 60px;
+  height: 50px;
+
+  box-shadow: 3px 2px 10px #000000;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #16221f;
+  cursor: pointer
+}
+
+::placeholder {
+  color: rgb(55, 55, 58);
+  font-size: 16px;
+  padding: 20px;
+}
+
+#logoAffiche {
+  width: 30px;
+  height: 20px;
+  margin-top: 9px;
+}
+
+.Postnote {
+  width: 95%;
+  height:auto;
+  border-radius: 6px;
+  margin: auto;
+  border-color: #000000;
+   margin-top:30px ;
+   text-align: center;
+}
+
+.areaBorder {
+  box-shadow: 3px 2px 10px #000000;
+  width: 85%;
+  height:auto;
+  top: 15px;
+  position: relative;
+  border-radius: 10px;
+  font-family: Hatton, sans-serif;
+  border-color: #16221f;
+  text-align: center;
+  font-size: 20px;
+  
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#borderVote {
+  height: 120px;
+}
+
+.dateNote {
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 25px;
+  text-align: center;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #1d312c;
+  position: relative;
+}
+.vote {
+  width: 85%;
+  height:auto;
+  border-radius: 6px;
+  margin: auto;
+  margin-top:30px;
+  margin-bottom:20px; 
+}
+.posteChadow {
+  
+  width: 600px;
+  height:auto;
+  top: 5px;
+  position: relative;
+  border-radius: 10px;
+  font-family: Hatton, sans-serif;
+  border-color: #16221f;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 50px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.titleVote {
+  width: 250px;
+  height: 35px;
+  border-radius: 20px;
+  margin: auto;
+
+  text-align: center;
+  padding: 4px;
+  font-size: 18px;
+  color: #16221f;
+  background-color: #ffffff;
+  border-style: solid;
+  border-color: #16221f 1px solid;
+}
+.choix {
+  width: 90%;
+  height: 50px;
+  font-size: 18px;
+  color: aliceblue;
+  float: left;
+  border-style: outset;
+  border-color: #000000 1px;
+}
+.resulta1 {
+  width: 11%;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #16221f;
+  font-size: 18px;
+  color: aliceblue;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  margin-left :94%;
+  top :9px;
+  padding-top:5px;
+}
+.voting {
+  width: 100%;
+  border-style: solid;
+}
+.value {
+  color: #000000;
+  position: relative;
+  height: 30px;
+  top: 2px;
+  width:90%;
+  font-size :15px;
+  border: #ffffff;
+ 
+}
+.value:focus{
+  outline: none;
+}
+.scroll {
+  margin-top:5px;
+  height: 60px;
+  width: 95%;
+ 
+}
+.check{
+  position: relative;
+height: 25px;
+width:5%;
+right:3px;
+border-style: solid;
+top: 10px;
+cursor: pointer
+}
+.fichier {
+  height: 132px;
+  width: 160px;
+  margin-left: 20px;
+  border-radius: 20px;
+  box-shadow: 3px 2px 10px #000000;
+  position: relative;
+  bottom: 5px;
+
+}
+
+.voteshadow{
+  box-shadow: 3px 2px 10px #000000;
+  width: 80%;
+  height:auto;
+  top: 15px;
+  position: relative;
+  border-radius: 10px;
+  font-family: Hatton, sans-serif;
+  border-color: #16221f;
+  text-align: center;
+  font-size: 20px;
+  left: 10%;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
