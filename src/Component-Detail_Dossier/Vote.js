@@ -15,7 +15,7 @@ function Vote({nouveauChoix  ,onChange , onClick ,onSupprime ,onCreer,onChoncheT
           />
         </div>
       </div>
-      {isopen ?   <ModalVote setopen={setopen} nouveauChoix={nouveauChoix} onChange={onChange} onClick={onClick} onSupprime={onSupprime} onCreer={onCreer} onChoncheTitre={onChoncheTitre}/>  : null}
+      {isopen ? <ModalVote setopen={setopen} nouveauChoix={nouveauChoix} onChange={onChange} onClick={onClick} onSupprime={onSupprime} onCreer={onCreer} onChoncheTitre={onChoncheTitre}/>  : null}
     </>
   );
 }

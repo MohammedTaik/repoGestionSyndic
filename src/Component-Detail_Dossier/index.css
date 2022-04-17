@@ -4,7 +4,6 @@
   box-sizing: border-box;
   
 }
-
 .comboST {
   width: 124px;
   height: 44px;
@@ -13,17 +12,26 @@
   text-align: center;
   box-shadow: inset;
   font-size: 18px;
-  left: 15%;
+  left: 10%;
   margin-left: 10px;
-  margin-top: 100px;
+  margin-top: 85px;
   outline: none;
   cursor: pointer;
   
 }
-
 #comboCategories {
-  left: 25%;
-  cursor: pointer
+  width: 124px;
+  height: 44px;
+  border-radius: 35px;
+  border-color: #16221f;
+  text-align: center;
+  box-shadow: inset;
+  font-size: 18px;
+  left: 10%;
+  margin-left: 10px;
+  margin-top: 85px;
+  outline: none;
+  cursor: pointer;
 }
 #ajouteCategorie {
   margin-left: 501px;
@@ -39,7 +47,6 @@
 
 
 .Header1 {
-  
   background-color: #16221F;
   height: 80px;
   width: 100%;
@@ -58,7 +65,7 @@
   margin-left: 10px;
 }
 
-#logo-name {
+#logo-name1 {
   color: white;
   font-size: 50px;
   margin-left: 8px;
@@ -95,11 +102,12 @@
   font-size: 20px;
 }
 #titleDT {
+  box-shadow: 1px 2px 5px  #000000;
   position: absolute;
   width: auto;
-  height: auto;
+  height: 50px;
   margin-top: 83px;
-  left: 47%;
+  left: 51%;
   border-radius: 10px;
   text-align: center;
 }
@@ -107,30 +115,28 @@
   margin-top:10px;
   display: flex;
 }
-.side-bar {
-  
-  background-color: #16221F;
-  color: #000000;
-  width: 13%;
-  float: left;
-  position: fixed;
- height: 100%;
-  text-align: center;
 
- 
+.side-bar1 {
+  background-color: #16221F;
+  position: absolute;
+  color: #000000;
+  height: 100%;
+  text-align: center;
+  z-index: 0;
+  width: 10%;
 }
 
-.side-bar #Dossier1 {
+#Dossier1 {
   position: absolute;
   align-items: center;
   height: 37px;
-  width: 100%;
-  background-color: #0e1d19;
+  width: 10%;
+  background-color: #1d2f2b;
   top:45%;
   color: white;
 }
 
-.side-bar a {
+#Dossier1 a {
   position: relative;
   font-size: 20px;
   margin: auto;
@@ -139,7 +145,7 @@
   top:5px;
 }
 
-.side-bar #Dossier:hover {
+.side-bar #Dossier1:hover {
   background-color: white;
   color: black;
   cursor: pointer;
@@ -149,15 +155,15 @@
   width: auto;
   font-size: 1.5vmax;
   font-family: Hatton;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 13px;
+  padding-bottom: 10px;
 }
 #Fichie {
   width: 45px;
   height: 40px;
-  margin-top: 100px;
+  margin-top: 85px;
   box-shadow: 3px 2px 10px #000000;
   border-radius: 10px;
   text-align: center;
@@ -187,7 +193,7 @@ width:100px;
   
   width: 45px;
   height: auto;
-  margin-top: 100px;
+  margin-top: 85px;
   box-shadow: 3px 2px 10px #000000;
  position: absolute;
  right: 30px;
@@ -204,15 +210,11 @@ width:100px;
 
 .postessimo {
   position: absolute;
-  width: 70%;
-  height: 67%;
-  left: 21%;
-  margin-top:19px;
+  width: 87%;
+  height: 70%;
+  margin-top:10px;
   border-radius: 10px;
   overflow-y: scroll;
-  border-style: outset;
-  
-
 }
 
 .creeNote {
@@ -232,22 +234,17 @@ width:100px;
 #create{
   position: absolute;
   display: flex;
-  z-index: 3;
- top: 92%;
-  margin-left: 10%;
-  width:70%;
-  
+  z-index: 100;
+  bottom: 10px;
+  margin-left: 2%;
+  width:83%;
 }
 #afficheNote {
-  
-
-  width: 60px;
+  width: 80px;
   height: 50px;
-
-  box-shadow: 3px 2px 10px #000000;
+ 
   border-radius: 10px;
   text-align: center;
-  background-color: #16221f;
   cursor: pointer
 }
 
@@ -258,9 +255,15 @@ width:100px;
 }
 
 #logoAffiche {
-  width: 30px;
-  height: 20px;
-  margin-top: 9px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #16221f;
+  cursor: pointer;
+  box-shadow: 3px 2px 10px #000000;
+  font-size: 16px;
+  color:#ffffff
 }
 
 .Postnote {
@@ -268,23 +271,21 @@ width:100px;
   height:auto;
   border-radius: 6px;
   margin: auto;
-  border-color: #000000;
-   margin-top:30px ;
-   text-align: center;
+  margin-top: 20px;
+  text-align: center;
+   
 }
 
 .areaBorder {
-  box-shadow: 3px 2px 10px #000000;
   width: 85%;
   height:auto;
-  top: 15px;
+  top: 5px;
   position: relative;
   border-radius: 10px;
   font-family: Hatton, sans-serif;
   border-color: #16221f;
   text-align: center;
   font-size: 20px;
-  
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -295,16 +296,43 @@ width:100px;
 }
 
 .dateNote {
-  width: 200px;
+  width: 100px;
   height: 30px;
   border-radius: 20px;
-  margin: auto;
-  margin-top: 25px;
-  text-align: center;
+  top: 15px;
   padding: 5px;
-  color: #ffffff;
-  background-color: #1d312c;
+  color: #000000;
   position: relative;
+  bottom:50px;
+  margin-left: 47%;
+}
+.line1{
+  float: left;
+  position: relative;   
+  height: 2px;
+  width:20% ;
+  background-color: #000000;
+  margin-left: 20%;
+  top: 26px;
+  border-radius:100px;
+}
+.line2{
+  position: relative;   
+  height: 2px;
+  width:20% ;
+  background-color: #000000;
+  right:20%;
+  float: right;
+  border-radius:100px;
+  bottom:4px;
+}
+.continer{
+  position: relative;
+  height:50px;
+  top: 3px;
+  padding-top:10px;
+  padding-bottom:10px;
+  margin-bottom: 10px;
 }
 .vote {
   width: 85%;
@@ -332,11 +360,10 @@ width:100px;
 }
 
 .titleVote {
-  width: 250px;
+  width: 40%;
   height: 35px;
   border-radius: 20px;
   margin: auto;
-
   text-align: center;
   padding: 4px;
   font-size: 18px;
@@ -354,6 +381,7 @@ width:100px;
   border-style: outset;
   border-color: #000000 1px;
 }
+
 .resulta1 {
   width: 11%;
   height: 30px;
@@ -380,8 +408,24 @@ width:100px;
   width:90%;
   font-size :15px;
   border: #ffffff;
- 
 }
+.pourcentage{
+  height: 10px;
+  width:0%;
+  background-color: rgba(164, 234, 234, 0.783);
+  position: relative;
+  margin-bottom: 40px;
+  border-radius:15px;
+}
+
+.widthPour{
+  position: relative;
+  width: 92.7%;
+  height: 30px;
+  left: 7.3%;
+  
+}
+
 .value:focus{
   outline: none;
 }
@@ -391,31 +435,36 @@ width:100px;
   width: 95%;
  
 }
+
 .check{
   position: relative;
-height: 25px;
-width:5%;
-right:3px;
-border-style: solid;
-top: 10px;
-cursor: pointer
+  height: 25px;
+  width:5%;
+  right:2%;
+  top: 10px;
+  cursor: pointer;
 }
+
 .fichier {
   height: 132px;
   width: 160px;
-  margin-left: 20px;
+  margin-left: 60%;
   border-radius: 20px;
   box-shadow: 3px 2px 10px #000000;
   position: relative;
   bottom: 5px;
-
+  z-index: 10;
 }
-
+.fichierImage{
+  height:100%;
+  width: 100%;
+  border-radius:20px;
+}
 .voteshadow{
   box-shadow: 3px 2px 10px #000000;
   width: 80%;
   height:auto;
-  top: 15px;
+  top: 30px;
   position: relative;
   border-radius: 10px;
   font-family: Hatton, sans-serif;
@@ -426,4 +475,99 @@ cursor: pointer
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  margin-bottom:40px;
+}
+@media only screen and (min-width:600px) and (max-width:798px){
+  .dateNote {
+    right: 4%;
+  }
+  #titleDT{
+    left: 60%;
+  }
+}
+@media only screen and (min-width:400px) and (max-width:600px){
+  .side-bar1 {
+
+    width: 1px;
+    
+   }
+  
+   #Dossier1 {
+     background-color: #16221f;
+    border-radius: 10px;
+    width: 70px;
+    text-align: center;
+    left: 82%;
+    top: 110px;
+  
+    }
+    #Dossier1 a{
+     color: #ffffff
+     }
+     .dateNote {
+      right: 3.5%;
+    }
+    .comboST{
+      position: absolute;
+      top: -34px;
+      left: -1px;
+      
+    }
+    #comboCategories{
+     position: absolute;
+     left: 0;
+     left: -1px;
+     margin-top:90px;
+    }
+    .postessimo{
+      margin-top:140px;
+      width: 100%;
+      left: 0;
+    }
+    #create{
+      left: 3%;
+      width: 90%;
+    }
+    #titleDT{
+      left:200px;
+      margin-top:70px;
+    }
+    .User1 img {
+      position: relative;
+      width:40px;
+      margin-top: 1px;
+      margin-left: 208px;
+    }
+    .User1 h2 {
+      position: absolute;
+      color: white;
+      font-size:20px;
+      margin-right: 10px;
+      margin-top: 1px;
+    }
+    .User1 h3 {
+      position:absolute;
+      color: white;
+      font-size: 15px;
+      margin-left:75px;
+      top: 25px;
+    }
+    .Header1{
+      height:50px;
+    }
+    .logo img{
+      height:25px;
+      width: 100px;
+    }
+    #logo-name1{
+      top: 50px;
+      font-size: 25px;
+    }
+    #vote{
+      top: -25px;
+    }
+    #Fichie{
+      top: -25px;
+    }
+
 }

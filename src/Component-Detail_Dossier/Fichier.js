@@ -7,7 +7,7 @@ function Fichier({ onChange ,onClick }){
   <div id="Fichie">
            <img src="../image/paper-clip (1).png" alt="" id="logoFichie" onClick={() => setopen(true)}/>
         </div>
-        {isopen ? <ModalFichier setopen={setopen} onChange={onChange} onClick={onClick}/> : null}
+        {isopen ? <ModalFichier setopen={setopen} onChange={onChange} onClick={onClick} /> : null}
     </>
     );
 }

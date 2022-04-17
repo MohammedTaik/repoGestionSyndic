@@ -1,11 +1,10 @@
 import React from "react";
 import "./Modal.css";
 function ModalVote({ setopen ,nouveauChoix ,onChange ,onClick ,onSupprime ,onCreer ,onChoncheTitre}) {
- 
-
+  
   return (
     <>
-      <div class="modalBackground">
+      <div class="modalBackground1">
         <div className="modalContainerVote">
           <div className="Cree">
             <h1>Creer un Vote</h1>
@@ -18,6 +17,17 @@ function ModalVote({ setopen ,nouveauChoix ,onChange ,onClick ,onSupprime ,onCre
           <button className="btn-ajoute-choix" onClick={() =>{onClick() }}>Ajoute Choix</button>
           <br />
           <br />
+
+          <img src="../image/close-femetr.png" className="closePage" onClick={() => {
+            setopen(false);
+             }} />
+
+          <button className="btn-Creer-vote" onClick={() => {
+            setopen(false);
+             onCreer();}}>
+            {" "}
+            Creer{" "}
+          </button>
           <div className="choixContainer">
               {nouveauChoix.map(function(n) {
                   return <div className="backgroundChoix">
@@ -26,16 +36,10 @@ function ModalVote({ setopen ,nouveauChoix ,onChange ,onClick ,onSupprime ,onCre
                  </div>
               })}  
           </div>
-          <button className="btn-Creer-vote" onClick={() => {
-            setopen(false);
-             onCreer();}}>
-            {" "}
-            Creer{" "}
-          </button>
+         
         </div>
       </div>
     </>
   );
 }
-
 export default ModalVote;

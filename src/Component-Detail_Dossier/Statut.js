@@ -1,6 +1,6 @@
-import React , { useState } from "react";
-import ModalStatut from "./Modal/ModalFichier"
-function Statut({ Statuts ,onChange }) {
+import React  from "react";
+function Statut({ Statuts ,onChange ,cases }) {
+   
   return (
     <>
       <form>
@@ -10,13 +10,10 @@ function Statut({ Statuts ,onChange }) {
             return <option value={st.Statut}>{st.statusName} </option>;
           })}
         </select>
-     
       </form>
-    
-      <div id="titleDT">
-        <p>Augmentation des frais de syndic</p>
+      <div id="titleDT"> 
+            <p>{cases.title}</p>
       </div>
-      
     </>
   );
 }

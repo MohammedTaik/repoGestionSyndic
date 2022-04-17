@@ -8,7 +8,7 @@ export default function AppGestionDeSyndic() {
     <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<DossierApp />} />
-      <Route path="/zebi" element={<App />} />
+      <Route path="/DetailDossier" element={<App />} />
     </Routes>
   </BrowserRouter>
   );

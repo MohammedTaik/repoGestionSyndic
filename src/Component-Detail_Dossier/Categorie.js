@@ -4,7 +4,7 @@ function Categorie({ Categories, onchange }) {
   return (
     <>
       <form>
-        <select aria-label="State" className="comboST" id="comboCategories" onChange={onchange}>
+        <select aria-label="State" id="comboCategories" onChange={onchange}>
           <option value="Select" >Categories</option>
           {Categories.map((Categorie) => {
             return <option>{Categorie.categoryName}</option>;

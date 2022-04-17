@@ -1,10 +1,33 @@
-.modalBackground {
+.modalBackground1 {
   background-color: rgba(0, 0, 0, 0.479);
   width: 100%;
   height: 100%;
   z-index: 1000;
-  margin: top 500px;
-  
+  position: absolute;
+  right:0;
+  bottom:0;
+}
+.modalBackgroundFichier{
+  background-color: rgba(0, 0, 0, 0.649);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+position: fixed;
+  right:0;
+  bottom:0;
+}
+.imageFichier{
+  width: 85%;
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 6%;
+  box-shadow: 3px 2px 10px #000000;
+  z-index: 10;
+}
+.bigimage{
+  width: 100%;
+  height: 100%;
+ 
 }
 .Cree h1 {
   text-align: center;
@@ -17,21 +40,22 @@
 
 .modalContainerVote {
   position: relative;
-  width: 700px;
+  width: 54%;
   height: auto;
   background-color: #16221f;
   margin: 0 auto;
-  margin-top: 180px;
+  margin-top: 20%;
   border-radius: 40px;
   box-shadow: 3px 2px 10px #000000;
   z-index: 10;
 }
 /*pour vote*/
 .TitreVote {
-  width: 100px;
+  position: absolute;
+  min-width: 13%;
   background-color: rgba(46, 54, 44, 0.479);
   font-size: 29px;
-  margin-left: 70px;
+  left: 5%;
   margin-top: 73px;
   position: absolute;
   color: #ffffff;
@@ -40,57 +64,43 @@
 }
 
 .inputTitreVote {
+  position: absolute;
   margin-top: 60px;
-  width: 300px;
+  width: 50%;
   height: 60px;
-  margin-left: 200px;
   border-radius: 30px;
-  padding-left: 25px;
+  left:30%;
   font-size: 18px;
   outline: none;
+  padding-left: 25px;
 }
 .ChoixVote {
-  width: 100px;
+  position: absolute;
+  min-width: 13%;
   background-color: rgba(46, 54, 44, 0.479);
   font-size: 29px;
-  margin-left: 70px;
-  margin-top: 60px;
+  left: 5%;
+  margin-top: 145px;
   position: absolute;
   color: #ffffff;
   text-align: center;
-  border-radius: 3px;
 }
 .inputChoix {
-  position: relative;
-  margin-top: 150px;
-  width: 300px;
-  height: 60px;
-  margin-top: 50px;
-  margin-left: 200px;
-  border-radius: 30px;
-  padding-left: 25px;
-  font-size: 18px;
-  outline: none;
- margin-bottom:75px;
-}
-.inputFiels {
-  position: relative;
-  margin-top: 75px;
-  width: 300px;
-  height: 60px;
-  margin-left: 200px;
-  border-radius: 30px;
-  padding-left: 25px;
-  font-size: 18px;
-  outline: none;
- margin-bottom:75px;
-
-}
-.btn-Creer-vote {
-  top:10px;
   position: absolute;
+  margin-top: 130px;
+  width: 50%;
+  height: 60px;
+  border-radius: 30px;
+  left:30%;
+  font-size: 18px;
+  outline: none;
+  padding-left: 25px;
+}
+
+.btn-Creer-vote {
+  position:relative;
   cursor: pointer;
-  width: 100px;
+  width: 20%;
   height: 50px;
   border-radius: 20px;
   background-color: #ffffff;
@@ -98,29 +108,32 @@
   font-size: 18px;
   font-family: Hatton;
   box-shadow: 3px 2px 10px #000000;
-  margin-top: 290px;
-  margin-left: 300px;
+  margin-left: 45%;
+  margin-bottom: 4%;
+  margin-top:190px;
 }
 .btn-ajoute-choix {
-  position: relative;
+  position: absolute;
   cursor: pointer;
-  width: 120px;
-  height: 40px;
+  width: 16%;
+  min-height: 40px;
   border-radius: 20px;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   font-size: 18px;
   font-family: Hatton;
   box-shadow: 3px 2px 10px #000000;
-  left: 5%;
+  right: 14px;
+  top: 195px;
 }
 .choixContainer {
   position: relative;
   margin: auto;
   width: 200px;
-  left: 200px;
   bottom: 30px;
-
+  margin-right: 31px;
+ margin-top: 20px ;
+ cursor: pointer;
 }
 
 .backgroundChoix {
@@ -148,21 +161,21 @@
   font-size: 17px;
   text-align: center;
 }
-/*pour Statut*/
 .modalContainer2 {
-  width: 700px;
-  height: 300px;
+  width: 50%;
+  height: 280px;
   background-color: #16221f;
   margin: 0 auto;
-  margin-top: 210px;
+  margin-top: 16%;
   border-radius: 40px;
   box-shadow: 3px 2px 10px #000000;
   z-index: 10;
+
 }
 .btn-Creer2 {
   position: relative;
   cursor: pointer;
-  width: 150px;
+  width: 20%;
   height: 50px;
   border-radius: 20px;
   background-color: #ffffff;
@@ -170,18 +183,51 @@
   font-size: 18px;
   font-family: Hatton;
   box-shadow: 3px 2px 10px #000000;
-  top: 80px;
-  left: 12px;
+  top: 50%;
+  left: 55%;
+ 
 }
-/*pour Categorie*/
 .Titre2 {
-  width: 120px;
+  min-width: 12%;
   background-color: rgba(46, 54, 44, 0.479);
   font-size: 29px;
-  margin-left: 70px;
+  margin-left:10%;
   margin-top: 75px;
   position: absolute;
   color: #ffffff;
   text-align: center;
   border-radius: 3px;
+}
+
+.inputFiels {
+  position: absolute;
+  margin-top: 75px;
+  width: 40%;
+  height: 60px;
+  border-radius: 30px;
+  padding-left: 25%;
+  font-size: 18px;
+  outline: none;
+ margin-bottom:75px;
+}
+.closePage{
+  width: 20px;
+  right: 25px;
+  position: absolute;
+  top: 25px;
+  cursor: pointer;
+}
+.closeFielPage{
+  position: relative;
+  width: 20px;
+  cursor: pointer;
+  left: 95%;
+  top: 25px;
+}
+.closePageForma{
+  width: 40px;
+  right: 25px;
+  position: absolute;
+  top: 25px;
+  cursor: pointer;
 }

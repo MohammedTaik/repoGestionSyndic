@@ -4,7 +4,7 @@ export default function Dossier({folder}) {
   function home(e) {
      var params = new URLSearchParams();
     params.append("id", folder.idCase); 
-        window.location.href = "http://localhost:3000/zebi?"+ params.toString() ;
+        window.location.href = "http://localhost:3000/DetailDossier?"+ params.toString() ;
   }
   return (
       <div className="note"  onClick={()=>{

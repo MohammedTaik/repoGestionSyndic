@@ -1,37 +1,8 @@
 import React from 'react';
 import getCase from "../ApiDetailDossier/ApiPosts";
 
-function CreePost({ input , setInput ,posts,setposts }){
-    const onInputChange =(e)=>{
-        setInput(e.target.value);
-    };
-      async function onClickSubmit (e){
-        e.preventDefault();  
-        const cases = await getCase();
-        console.log(cases)
-         fetch('http://localhost:5052/api/Note/',{
-             method : 'post',
-             headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-                'Access-Control-Allow-Origin': '*'
-             },
-             body :JSON.stringify({
-                note:input ,
-                type :"note",
-                idCase:cases.idCase
-             })
-         }).then(response=>{
-             console.log(response)
-             if(response.status==200){
-                 console.log("success")
-             }
-             return response.json
-         }).then((data)=>{
-            console.log(posts)
-            setInput("");
-             setposts([...posts,data])
-          }) 
-        }
+function CreePost({input , onInputChange,onClickSubmit }){
+
     return(
     <>
     <form onSubmit={onClickSubmit} >
@@ -42,7 +13,9 @@ function CreePost({ input , setInput ,posts,setposts }){
         value={input}
         />
         <div id="afficheNote">
-            <button type="submit" id="logoAffiche" />
+            <button type="submit" id="logoAffiche" >
+            Envoyer
+            </button>
         </div>
         </div>
     </form>

@@ -12,61 +12,72 @@ import getCase, {
   getStatuts,
   getVote,
   getResults,
-} 
-from "../ApiDetailDossier/ApiPosts";
+} from "../ApiDetailDossier/ApiPosts";
 import "./index.css";
 
 function App() {
   const [results, setresult] = useState([]);
   const [posts, setposts] = useState([]);
   const [choix, setChoix] = useState([]);
+  const [cases, setcase] = useState([]);
   let test = [];
   let choixCopys = [];
-  let idcase =null ;
-  useEffect(() => {
-    async function getdata() {
-      const Case = await getCase();
-      idcase=Case.idCase
-      console.log(idcase)
-      Case.notes.map((n) => {
-        test.push(n);
-      });
-      Case.votes.map((v) => {
-        test.push(v);
-      });
-
-      var str;
-      for (var i = 0; i < test.length; i++) {
-        for (var j = i; j < test.length; j++) {
-          if (new Date(test[i].creationDate) > new Date(test[j].creationDate)) {
-            str = test[i];
-            test[i] = test[j];
-            test[j] = str;
+  useEffect(
+    () => {
+      async function getdata() {
+        const Case = await getCase();
+        Case.notes.map((n) => {
+          test.push(n);
+        });
+        Case.votes.map((v) => {
+          test.push(v);
+        });
+        Case._files.map((f) => {
+          test.push(f);
+        });
+        var str;
+        
+        for (var i = 0; i < test.length; i++) {
+          for (var j = i; j < test.length; j++) {
+            if (
+              new Date(test[i].creationDate) > new Date(test[j].creationDate)
+            ) {
+              str = test[i];
+              test[i] = test[j];
+              test[j] = str;
+            }
           }
         }
-      }
+        test.map((test) => {
+          var date = new Date(test.creationDate);
+          let dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+          test.creationDate=dateMDY
+        })
 
-      const Results = await getResults();
-      setresult(Results);
+        const Results = await getResults();
+        setresult(Results);
 
-      const Categories = await getCategories();
-      setCategories(Categories);
+        const Categories = await getCategories();
+        setCategories(Categories);
 
-      const Statuts = await getStatuts();
-      setStatut(Statuts);
+        const Statuts = await getStatuts();
+        setStatut(Statuts);
 
-      const Votes = await getVote();
-      Votes.map((vote) => {
-        vote.choices.map((choi) => {
-          choixCopys.push(choi);
+        const Votes = await getVote();
+        Votes.map((vote) => {
+          vote.choices.map((choi) => {
+            choixCopys.push(choi);
+          });
         });
-      });
-
-      setposts(test);
-      setChoix(choixCopys);
-    }
-    getdata();
-  }, [setposts]);
+        setcase(Case);
+        setposts(test);
+        setChoix(choixCopys);
+      }
+      getdata();
+    },
+    [setposts],
+    [posts]
+  );
 
   const [input, setInput] = useState("");
 
@@ -77,7 +88,6 @@ function App() {
   async function onChangeStatut(e) {
     const cases = await getCase();
     console.log(cases);
-    let idStatut = null;
     Statuts.map((statut) => {
       if (statut.statusName == e.target.value) {
         fetch("http://localhost:5052/api/Case/" + cases.idCase, {
@@ -92,7 +102,7 @@ function App() {
             description: cases.description,
             creationDate: cases.creationDate,
             category: cases.category,
-            status: statut.idStatus
+            status: statut.idStatus,
           }),
         }).then((response) => {
           console.log(response);
@@ -107,19 +117,50 @@ function App() {
 
   /*for creer  Fichier ----------------------------*/
 
-  const [changeFichier, setChangeFichier] = useState([]);
-  const [nouveauFichier, setNouveauFichier] = useState([
-    {
-      _file: null,
-      type: "Fichier",
-      idCase: 1,
-    },
-  ]);
-  function handleChangeFichier(e) {
-    setNouveauFichier({ ...nouveauFichier, _file: e.target.files[0] });
+
+  const [changeFichier, setChangeFichier] = useState("");
+  let id = cases.idCase
+  let file =''
+  
+   function handleChangeFichier(e) {
+    file=e.target.files[0]
+    let reader = new FileReader();
+    reader.onload=() => {
+      if(reader.readyState ==2){
+        setChangeFichier(reader.result);
+      }
+    }
+    reader.readAsDataURL( file)
   }
 
-  function handeCreateFichiert(e) {}
+  function handeCreateFichiert(e) {
+
+        fetch("http://localhost:5052/api/file", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify({
+            _file: changeFichier,
+            type: "Fichier",
+            idCase: id,
+          }),
+        }).then((response) => {
+          console.log(response);
+          if (response.status == 200) {
+            console.log("success");
+          }
+          return response.json();
+        }) .then((data) => {
+          console.log(data);
+          setInput("");
+         let  date= new Date(data.creationDate)
+          let dateMdy = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+          data.creationDate=dateMdy;
+          setposts([...posts, data]);
+        });
+  }
   /* for Categorie ----------------------------*/
   const [Categories, setCategories] = useState([]);
 
@@ -132,7 +173,7 @@ function App() {
       }
     });
     console.log(idCategorie);
-    fetch("http://localhost:5052/api/Case/" +cases.idCase, {
+    fetch("http://localhost:5052/api/Case/" + cases.idCase, {
       method: "PUT",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -160,6 +201,7 @@ function App() {
     idChoice: null,
     choice: "",
   });
+  
   const [nouveauChoix, setNouveauChoix] = useState([]);
 
   function changeCreerChoix(e) {
@@ -170,7 +212,6 @@ function App() {
     });
     console.log(currentChoix.choice);
   }
-  
   function ClickCreerChoix() {
     setcurrentChoix({
       ...currentChoix,
@@ -178,7 +219,6 @@ function App() {
     });
     setNouveauChoix([...nouveauChoix, currentChoix]);
     console.log(nouveauChoix);
-    console.log(idcase)
   }
 
   function handlSupprChoix(choix) {
@@ -191,26 +231,14 @@ function App() {
     setTitreVote(e.target.value);
     console.log(titreVote);
   }
-
+  let listchoix = [];
   async function handleCreerVote() {
     const cases = await getCase();
-    nouveauChoix.map((choi) => {
-      choix.push(choi);
-      console.log(choix);
-    });
+    choix.map((choice) => {
+      listchoix.push(choice)
+    })
     console.log(choix);
-    setposts([
-      ...posts,
-      {
-        id: posts.length + 1,
-        title: "hhhh",
-        id_vote: 7,
-        id_dossier: 8,
-        date: 555,
-        type: "vote",
-      },
-    ]);
-    console.log(posts);
+    console.log(listchoix);
     fetch("http://localhost:5052/api/Vote", {
       method: "POST",
       headers: {
@@ -228,8 +256,60 @@ function App() {
       if (response.status == 200) {
         console.log("success");
       }
+      return response.json();
+    }).then((data) => {
+      console.log(data);
+      let  date= new Date(data.creationDate)
+      let dateMdy = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+      data.creationDate=dateMdy;
+      setposts([...posts, data]);
+      data.choices.map((choic)=>{
+        listchoix.push(choic) 
+        console.log(choic)
+      })
+      setChoix(listchoix)
     });
     setNouveauChoix([]);
+  }
+
+  /* code for create note ----------------------------*/
+  const onInputChange = (e) => {
+    setInput(e.target.value);
+  };
+  let choixList = [];
+  async function onClickSubmit(e) {
+   e.preventDefault();
+    const cases = await getCase();
+
+    fetch("http://localhost:5052/api/Note/", {
+      method: "post",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        note: input,
+        type: "note",
+        idCase: cases.idCase,
+      }),
+    })
+      .then((response) => {
+        console.log(response);
+        if (response.status == 200) {
+          console.log("success");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setInput("");
+       let  date= new Date(data.creationDate)
+        let dateMdy = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+        data.creationDate=dateMdy;
+        setposts([...posts, data]);
+
+      });
+      
   }
 
   return (
@@ -239,25 +319,28 @@ function App() {
       <SideBare />
       <div id="content">
         <div id="flexx">
-          <div id="cs">
-        <Categorie Categories={Categories} onchange={onChangeCategorie} />
-        <Statut Statuts={Statuts} onChange={onChangeStatut} />
-        </div>
-        
-        <Fichier onChange={handleChangeFichier} onClick={handeCreateFichiert} />
+         
+            <Categorie Categories={Categories} onchange={onChangeCategorie} />
+            <Statut Statuts={Statuts} onChange={onChangeStatut} cases={cases} />
+          
 
-        <Vote
-          nouveauChoix={nouveauChoix}
-          onChange={changeCreerChoix}
-          onClick={ClickCreerChoix}
-          onSupprime={handlSupprChoix}
-          onCreer={handleCreerVote}
-          onChoncheTitre={onChoncheTitre}
-          posts={posts}
-        />
-       
+          <Fichier
+            onChange={handleChangeFichier}
+            onClick={handeCreateFichiert}
+           
+          />
+
+          <Vote
+            nouveauChoix={nouveauChoix}
+            onChange={changeCreerChoix}
+            onClick={ClickCreerChoix}
+            onSupprime={handlSupprChoix}
+            onCreer={handleCreerVote}
+            onChoncheTitre={onChoncheTitre}
+            posts={posts}
+          />
         </div>
-        
+
         <div className="postessimo">
           <PosteList
             posts={posts}
@@ -265,6 +348,7 @@ function App() {
             choix={choix}
             setChoix={setChoix}
             results={results}
+            setresult={setresult}
           />
         </div>
         <CreePost
@@ -272,6 +356,8 @@ function App() {
           setInput={setInput}
           posts={posts}
           setposts={setposts}
+          onInputChange={onInputChange}
+          onClickSubmit={onClickSubmit}
         />
       </div>
     </>

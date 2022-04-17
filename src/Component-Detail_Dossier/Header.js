@@ -7,7 +7,7 @@ import React from "react";
       <div className="Header1">
       <div className="logo">
         <img src="../image/logo.png" alt="" />
-        <div id="logo-name">Syndic</div>
+        <div id="logo-name1">Syndic</div>
       </div>
 
       <div className="User1">
